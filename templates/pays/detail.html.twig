@@ -1,21 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ data.name.common }}{% endblock %}
+{% block title %}Détail {{ data.0.name.common }}{% endblock %}
 
 {% block body %}
 
-    <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center space-between">
-        {% for name in data.name %}
-            <div class="card m-3" style="width: 18rem;">
-                <img class="border border-dark" src="{{ data.flags.png }}">
-                <div class="card-body text-center">
-                    <h3>{{ data.name.common }}</h3>
-                    <p class="fw-light">{{ data.capital.0 }}</p>
-                    <p><span class="badge bg-danger">{{ data.population }} habitants</span></p>
-                </div>
-            </div>
+    <div class="card m-3" style="width: 18rem;">
+        <img class="border border-dark" src="{{ data.0.flags.png }}">
+        <div class="card-body text-center">
+            <h3>{{ data.0.name.common }}</h3>
+            <p class="fw-light">{{ data.0.capital.0 }}</p>
+            <p>{{ data.0.region }}</p>
 
-        {% endfor %}
+            <p><span class="badge bg-danger">{{ data.0.population }} habitants</span></p>
+        </div>
     </div>
 
 {% endblock %}

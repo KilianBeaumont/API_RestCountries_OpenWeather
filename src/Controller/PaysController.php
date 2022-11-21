@@ -36,13 +36,13 @@ class PaysController extends AbstractController
         ]);
     }
 
-    #[Route('/pays/détail', name: 'app_pays_détail')]
-    public function getPays(): Response
+    #[Route('/pays/{name}', name: 'app_pays_detail')]
+    public function getPays($name): Response
     {
         // Lancer une requête vers l'api RestCountries
         $response = $this->httpClient->request(
             'GET',
-            'https://restcountries.com/v3.1/subregion/europe?fields=name,population,capital,flags'
+            'https://restcountries.com/v3.1/name/'.$name.'?fields=name,region,population,capital,currency,lang,flags'
         );
         // Traiter la réponse
         $contenu = $response->toArray();
@@ -51,5 +51,4 @@ class PaysController extends AbstractController
             'data' => $contenu,
         ]);
     }
-
 }
