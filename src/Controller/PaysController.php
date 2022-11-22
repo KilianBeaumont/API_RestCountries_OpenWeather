@@ -42,8 +42,9 @@ class PaysController extends AbstractController
         // Lancer une requête vers l'api RestCountries
         $response = $this->httpClient->request(
             'GET',
-            'https://restcountries.com/v3.1/name/'.$name.'?fields=name,region,population,capital,currency,lang,flags'
+            'https://restcountries.com/v3.1/name/'.$name.'?fields=name,region,population,capital,currencies,languages,flags'
         );
+
         // Traiter la réponse
         $contenu = $response->toArray();
 
