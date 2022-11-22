@@ -6,7 +6,7 @@
 
     <div class="row row-cols-1 row-cols-md-2 g-4 justify-content-center space-between mt-3">
         {% for data in data %}
-            <div class="card m-3" style="width: 18rem;">
+            <div class="card m-3" style="width: 20rem;">
                 <a class="justify-content-center" href="{{ path('app_pays_detail',{'name': data.name.common}) }}"><img class="border border-dark" src="{{ data.flags.png }}"></a>
                 <div class="card-body text-center">
                     <h3>{{ data.name.common }}</h3>

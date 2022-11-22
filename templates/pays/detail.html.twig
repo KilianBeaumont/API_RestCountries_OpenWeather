@@ -13,6 +13,8 @@
             <p>{{ data.0.region }}</p>
             <p>Monnaie : {{ data.0.currencies | first | first}}</p>
             <p><span class="badge bg-danger">{{ data.0.population }} habitants</span></p>
+            <br>
+            <h1>Météo à {{ data.0.capital.0 }}</h1>
         </div>
     </div>
 
